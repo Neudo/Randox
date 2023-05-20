@@ -5,6 +5,8 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
+        <h2 class="text-center text-4xl font-bold" >Welcome back !</h2>
+        <p class="text-center italic">Connectez-vous à votre compte admin pour gérer Randox</p>
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -14,7 +16,7 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('Mot de passe')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -27,20 +29,20 @@
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                <input id="remember_me" type="checkbox" class="  text-indigo-600 shadow-sm" name="remember">
+                <span class="ml-2 text-sm text-gray-600 ">{{ __('Se souvenir de moi') }}</span>
             </label>
         </div>
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                <a class="underline text-sm text-gray-600  hover:text-gray-900  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    {{ __('Mot de passe oublié ?') }}
                 </a>
             @endif
 
             <x-primary-button class="ml-3">
-                {{ __('Log in') }}
+                {{ __('Connexion') }}
             </x-primary-button>
         </div>
     </form>
