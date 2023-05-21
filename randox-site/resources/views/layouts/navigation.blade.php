@@ -16,6 +16,28 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('users')" :active="request()->routeIs('users')">
+                        {{ __('Utilisateurs') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('subscription')" :active="request()->routeIs('subscription')">
+                        {{ __('Abonnements') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('posts')" :active="request()->routeIs('posts')">
+                        {{ __('Articles') }}
+                    </x-nav-link>
+                </div>
+{{--                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
+{{--                    <x-nav-link :href="route('/')">--}}
+{{--                        {{ __('Voir le site') }}--}}
+{{--                    </x-nav-link>--}}
+{{--                </div>--}}
+
+
             </div>
 
             <!-- Settings Dropdown -->
