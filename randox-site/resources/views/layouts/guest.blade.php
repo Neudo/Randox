@@ -31,7 +31,7 @@
                         <p class="italic" >Connectez vous pour accéder au dashboard</p>
                     </div>
                     <div class="big-card-body">
-                        <img src="/img/home-hero.jpg" alt="">
+                        <img src="/home-hero.jpg" alt="">
                     </div>
                 </div>
             </div>
