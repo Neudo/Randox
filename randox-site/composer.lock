@@ -39,6 +39,7 @@
                 "MIT"
             ],
             "description": "Arbitrary-precision arithmetic library",
+            "description": "Arbitrary-precision arithmetic library",
             "keywords": [
                 "Arbitrary-precision",
                 "BigInteger",

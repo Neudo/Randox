@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,13 +31,17 @@ Route::get('/subscription', function () {
     return view('subscription');
 })->middleware(['auth', 'verified'])->name('subscription');
 
-Route::get('/posts', function () {
-    return view('posts');
-})->middleware(['auth', 'verified'])->name('posts');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/posts',[PostController::class, 'getPosts'] )->name('posts');
+    Route::delete('/posts/{id}',[PostController::class, 'deletePost'] )->name('post.delete');
+});
+
 
 Route::get('/new-post', function () {
     return view('newPost');
 })->middleware(['auth', 'verified'])->name('new-post');
+
 
 
 
@@ -45,5 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 require __DIR__.'/auth.php';

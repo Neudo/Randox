@@ -1,15 +1,15 @@
 <nav x-data="{ open: false }" class="bg-slate-50 border-b lg:w-[30%] lg:min-h-screen border-gray-100 dark:border-gray-700">
     <!-- Settings Dropdown -->
-    <div class="hidden bg-black rounded-b-lg sm:flex w-[80%] m-auto sm:items-center">
-        <a href="{{  route('profile.edit') }}">Edit profil</a>
+    <div class="hidden bg-black rounded-b-lg sm:flex w-[80%] p-4 m-auto sm:items-center flex justify-between">
+        <a class="text-white" href="{{  route('profile.edit') }}">Edit profil</a>
         <!-- Authentication -->
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <x-dropdown-link :href="route('logout')"
+            <a class="text-white" href="{{  route('logout') }}"
                              onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                 {{ __('Log Out') }}
-            </x-dropdown-link>
+            </a>
         </form>
     </div>
     <!-- Primary Navigation Menu -->
