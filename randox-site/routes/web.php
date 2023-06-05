@@ -35,6 +35,7 @@ Route::get('/subscription', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/posts',[PostController::class, 'getPosts'] )->name('posts');
     Route::delete('/posts/{id}',[PostController::class, 'deletePost'] )->name('post.delete');
+    Route::post('/new-post/',[PostController::class, 'newPost'] )->name('post.new');
 });
 
 

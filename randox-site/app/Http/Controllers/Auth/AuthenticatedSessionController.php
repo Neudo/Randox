@@ -29,17 +29,6 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        // Récupérez l'utilisateur connecté
-        $user = $request->user();
-
-        // Générez le token JWT
-        $token = JWTAuth::fromUser($user);
-
-        var_dump($token);
-        die();
-        // Stockez le token JWT dans une session, un cookie ou tout autre mécanisme de votre choix
-        // Par exemple, pour stocker le token JWT dans une session Laravel :
-        session(['jwt_token' => $token]);
 
         $request->session()->regenerate();
 

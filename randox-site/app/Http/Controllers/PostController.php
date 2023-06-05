@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Laravel\Sanctum\Sanctum;
 
 class PostController extends Controller {
     public function getPosts()
@@ -16,21 +15,40 @@ class PostController extends Controller {
         return view('posts', compact('posts'));
     }
 
+    public function newPost(Request $request)
+    {
+
+        $validated = $request->validate([
+            'title' => 'required|max:150',
+            'slug' => 'required|max:150',
+            'image' => 'required',
+            'short_desc' => 'required',
+            'content' => 'required',
+        ]);
+
+        if($validated){
+        $user = $request->user();
+        $post = new Post();
+        $post->title = $request->title;
+        $post->slug = $request->slug;
+        $post->image = $request->image;
+        $post->short_desc = $request->short_desc;
+        $post->content = $request->post_content;
+        $post->author = $user->name;
+        $post->save();
+        return redirect('posts')->with('success', 'Article enregistré !');
+        } else {
+            return redirect()->back()->withErrors($validated)->withInput();
+        }
+    }
+
     public function deletePost($id)
     {
-        $url = 'http://localhost:3005/post/delete/' . $id;
-        $options = [
-            'http' => [
-                'method' => 'DELETE',
-            ]
-        ];
+        $post = Post::find($id);
+        $post->delete();
 
-        $context = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
-
-        if ($result === false) {
-            return redirect()->back()->with('error', 'Erreur lors de la suppression du post.');
-        }
         return redirect()->back()->with('success', 'Le post a été supprimé avec succès.');
+
+
     }
 }
