@@ -23,7 +23,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-black">
-                    <form class="flex-col" action="{{ route('post.new') }}" method="POST">
+                    <form class="flex-col" action="{{ route('post.new') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="group mb-6 flex flex-col">
                             <label class="font-bold" for="title">Titre*</label>
