@@ -92,7 +92,6 @@
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/laravel/sail" />
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/sebastian/complexity" />
-      <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/laravel/sanctum" />
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/laravel/serializable-closure" />
@@ -117,6 +116,11 @@
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/nunomaduro/collision" />
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/phpunit/php-invoker" />
       <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/laravel/sanctum" />
+      <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/cloudinary/transformation-builder-sdk" />
+      <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/cloudinary-labs/cloudinary-laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/teapot/status-code" />
+      <excludeFolder url="file://$MODULE_DIR$/randox-site/vendor/symfony/polyfill-php83" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
