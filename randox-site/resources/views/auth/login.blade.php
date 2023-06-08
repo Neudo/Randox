@@ -7,6 +7,14 @@
 
         <h2 class="text-center text-4xl font-bold" >Welcome back !</h2>
         <p class="text-center italic">Connectez-vous à votre compte admin pour gérer Randox</p>
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                <p class="mt-5 mb-5 font-bold text-red-600"> {{ session('error') }}</p>
+            </div>
+        @endif
+
+
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />

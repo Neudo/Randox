@@ -27,12 +27,18 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+
         $request->authenticate();
+        $user = Auth::user();
 
 
-        $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if($user->isAdmin === 1){
+            $request->session()->regenerate();
+            return redirect()->intended(RouteServiceProvider::HOME);
+        } else {
+            Auth::logout();
+            return back()->with('error', 'Vous n\'êtes pas autorisé à vous connecter.');
+        }
     }
 
 

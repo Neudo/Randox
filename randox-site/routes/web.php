@@ -36,6 +36,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/posts',[PostController::class, 'getPosts'] )->name('posts');
     Route::delete('/posts/{id}',[PostController::class, 'deletePost'] )->name('post.delete');
     Route::post('/new-post/',[PostController::class, 'newPost'] )->name('post.new');
+    Route::get('/posts/{slug}',[PostController::class, 'show'] )->name('post.show');
+    Route::get('/posts/{slug}/edit',[PostController::class, 'editPost'] )->name('posts.edit');
+    Route::put('/posts/{slug}/',[PostController::class, 'updatePost'] )->name('posts.update');
 });
 
 
