@@ -31,7 +31,7 @@
                     <x-nav-link :href="route('users')" :active="request()->routeIs('users')">
                         {{ __('Utilisateurs') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('subscription')" :active="request()->routeIs('subscription')">
+                    <x-nav-link :href="route('plans')" :active="request()->routeIs('subscription')">
                         {{ __('Abonnements') }}
                         <x-nav-link :href="route('posts')" :active="request()->routeIs('posts')">
                             {{ __('Articles') }}

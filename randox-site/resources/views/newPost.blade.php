@@ -11,16 +11,16 @@
 
     @if($errors->any())
         <div class="max-w-7xl py-6 mx-auto sm:px-6 lg:px-8">
-            <ul class="bg-white overflow-hidden shadow-sm sm:rounded-lg" >
+            <ul class="bg-white overflow-hidden shadow-sm sm:rounded-lg pt-4 px-4" >
                 @foreach($errors->all() as $error)
-                    <li class="bg-red-500 text-white mb-4" >{{ $error }}</li>
+                    <li class="bg-red-500 text-white mb-4 inline-block p-[10px]" >{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
     @endif
 
     <div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-4">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-black">
                     <form class="flex-col" action="{{ route('post.new') }}" method="POST" enctype="multipart/form-data">
@@ -35,9 +35,12 @@
                             <span class="italic">150 caractères max.</span>
                             <input id="slug" name="slug" class="rounded" type="text" value="{{ old('slug') }}">
                         </div>
-                        <div class="group flex mb-6 flex-col">
-                            <label for="image">Image</label>
-                            <input id="image" class="rounded" name="image" type="file" value="{{ old('image') }}" >
+                        <div class="group mb-6 flex-col">
+                            <div>Sélectionnez l'image</div> <br>
+                            <label for="image" class="custom-file-upload" >Image</label>
+                            <i class="fa fa-cloud-upload"></i>
+                            <input id="image" name="image" type="file" accept=".jpg, .jpeg, .png, .svg" hidden value="{{ old('image') }}" >
+                            <span id="file-chosen" class="ml-4">Pas de fichier choisi.</span>
                         </div>
                         <div class="group flex mb-6 flex-col">
                             <label class="font-bold" for="short_desc">Description courte*</label>
@@ -46,7 +49,7 @@
                         </div>
                         <div class="group flex mb-6 flex-col">
                             <label class="font-bold" for="post_content">Contenu*</label>
-                            <textarea id="post_content" class="rounded" rows="20" name="post_content" >{{ old('post_content') }}</textarea>
+                            <x-forms.tinymce-editor/>
                         </div>
                         <button type="submit" class="rounded-lg mt-4 py-4 px-7 hover:bg-blue-700 transition ease-in bg-blue-600 text-white"  >Envoyer</button>
                     </form>

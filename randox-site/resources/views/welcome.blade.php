@@ -19,7 +19,7 @@
 
     </head>
     <body class="antialiased">
-    <div class="w-full min-h-screen  " style="background-image: url('../../resources/img/home-hero.jpg')">
+    <div class="w-full min-h-screen bg-cover " style="background-image: url('full-home.jpg')">
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
@@ -29,6 +29,7 @@
                     @endauth
                 </div>
             @endif
+        
 
         </div>
     </body>

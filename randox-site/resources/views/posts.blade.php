@@ -20,7 +20,7 @@
     </div>
     @if(session('success'))
         <div class="max-w-7xl py-6 mx-auto sm:px-6 lg:px-8">
-            <p class="bg-green-400"> {{ session('success') }}</p>
+            <p class="bg-green-400 inline-block px-8 py-4 "> {{ session('success') }}</p>
         </div>
     @endif
     <div class="">
