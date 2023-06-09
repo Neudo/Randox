@@ -126,6 +126,7 @@
       <path value="$PROJECT_DIR$/randox-site/vendor/cloudinary-labs/cloudinary-laravel" />
       <path value="$PROJECT_DIR$/randox-site/vendor/teapot/status-code" />
       <path value="$PROJECT_DIR$/randox-site/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/randox-site/vendor/tinymce/tinymce" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
