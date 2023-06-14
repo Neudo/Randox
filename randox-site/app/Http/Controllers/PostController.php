@@ -6,11 +6,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller {
-    public function getPosts()
-    {
-        $url = 'http://localhost:3005/post/';
-        $data = file_get_contents($url);
-        $posts = json_decode($data);
+    function getPosts() {
+        $posts = Post::paginate(15);
 
         return view('posts', compact('posts'));
     }

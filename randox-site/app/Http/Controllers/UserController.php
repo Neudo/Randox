@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     function getUsers() {
-        $users = User::all();
+        $users = User::paginate(15);
 
         return view('users', compact('users'));
     }
