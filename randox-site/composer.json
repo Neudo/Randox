@@ -11,7 +11,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "tinymce/tinymce": "^6.4"
+        "tinymce/tinymce": "^6.4",
+        "xvladqt/faker-lorem-flickr": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
