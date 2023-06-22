@@ -43,7 +43,7 @@
                                             <label for="isAdmin">Admin</label>
                                         </div>
 
-                                        <button class="btn text-white hover:bg-blue-600 bg-blue-500 p-2"
+                                        <button style="max-height: 40px; margin-top: 16px" class="btn text-white hover:bg-blue-600 bg-blue-500 p-2"
                                                 type="submit">Modifier
                                         </button>
                                     </form>

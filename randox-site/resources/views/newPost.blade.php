@@ -30,11 +30,6 @@
                             <span class="italic">150 caractères max.</span>
                             <input id="title" name="title" class="rounded" type="text" value="{{ old('title') }}" >
                         </div>
-                        <div class="group mb-6 flex flex-col">
-                            <label class="font-bold" for="slug">Slug*</label>
-                            <span class="italic">150 caractères max.</span>
-                            <input id="slug" name="slug" class="rounded" type="text" value="{{ old('slug') }}">
-                        </div>
                         <div class="group mb-6 flex-col">
                             <div>Sélectionnez l'image</div> <br>
                             <label for="image" class="custom-file-upload" >Image</label>

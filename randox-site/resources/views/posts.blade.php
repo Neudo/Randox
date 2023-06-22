@@ -50,8 +50,7 @@
             </div>
         @endforeach
     </div>
-    <div>
+    <div class="mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
         {{ $posts->links() }}
-
     </div>
 </x-app-layout>

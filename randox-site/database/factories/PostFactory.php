@@ -24,13 +24,12 @@ class PostFactory extends Factory
         $title = $this->faker->words(5, true);
         return [
             'title' => $title,
-            'slug' => $title,
+            'slug' => preg_replace('/\s+/', '-', $title),
             'short_desc' => $this->faker->words($rand, true),
             'content' => $this->faker->words($bigRand, true),
             'image' =>   $faker->imageUrl($width = 800, $height= 350, ['food']),
             'publied' => $this->faker->boolean(),
             'author' => $this->faker->name(),
-
         ];
     }
 

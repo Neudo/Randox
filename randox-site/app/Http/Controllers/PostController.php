@@ -22,7 +22,6 @@ class PostController extends Controller {
     {
         $validated = $request->validate([
             'title' => 'required|max:150',
-            'slug' => 'required|max:150',
             'image' => 'required',
             'short_desc' => 'required',
             'post_content' => 'required',
@@ -30,11 +29,13 @@ class PostController extends Controller {
 
         if($validated){
 
+            $slug = preg_replace('/\s+/', '-', $request->title);
+
             $result = $request->image->storeOnCloudinary();
             $user = $request->user();
             $post = new Post();
             $post->title = $request->title;
-            $post->slug = $request->slug;
+            $post->slug = $slug;
             $post->image = $result->getSecurePath();
             $post->short_desc = $request->short_desc;
             $post->content = $request->post_content;
