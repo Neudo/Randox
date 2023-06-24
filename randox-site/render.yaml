@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: laravel-breeze-app
+    name: randox_laravel_app
     env: docker
-    buildCommand: "docker build -t laravel-breeze-app ."
-    startCommand: "docker run -p 8080:80 --log-driver json-file laravel-breeze-app"
+    buildCommand: "docker build -t randox_laravel_app ."
+    startCommand: "docker run -p 8080:80 --log-driver json-file randox_laravel_app"
     envVars:
       - key: APP_ENV
         value: production
@@ -14,17 +14,17 @@ services:
       - key: APP_URL
         value: https://randox-laravel.onrender.com
       - key: DB_CONNECTION
-        value: pgsql
+        value: DB_CONNECTION
       - key: DB_HOST
         value: dpg-cga542o2qv25khke224g-a
       - key: DB_PORT
-        value: 5432
+        value: DB_PORT
       - key: DB_DATABASE
-        value: randox
+        value: DB_DATABASE
       - key: DB_USERNAME
-        value: 9pyt0mfzeqyb40g01vn4
+        value: DB_USERNAME
       - key: DB_PASSWORD
-        value: pscale_pw_HHh9l2nkPsWKbKGyFQI6YWn6CD1gYMgTrQQeFgdaSqx
+        value:
       - key: LOG_CHANNEL
         value: stack
       - key: LOG_LEVEL
