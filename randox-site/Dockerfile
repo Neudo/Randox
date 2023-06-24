@@ -55,5 +55,9 @@ RUN . ~/.nvm/nvm.sh && npm install && npm run build
 # Activez le mod_rewrite d'Apache
 RUN a2enmod rewrite
 
+# Redirigez les journaux d'erreur Apache vers la sortie standard
+RUN ln -sf /dev/stdout /var/log/apache2/error.log
+
+
 # Exposez le port 80 pour le serveur PHP
 EXPOSE 80
