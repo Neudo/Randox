@@ -18,6 +18,10 @@ export default defineConfig({
                     dest: 'public/js/tinymce'
                 }
             ]
-        })
+        }),
+
     ],
+    server: {
+        https:true
+    }
 });
