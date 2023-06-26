@@ -10,7 +10,7 @@ class PlanController extends Controller
 {
     public function getPlans()
     {
-        $url = 'http://localhost:3005/plan/';
+        $url = env('API_URL') . '/plan/';
         $data = file_get_contents($url);
         $plans = json_decode($data);
 
